@@ -1,9 +1,10 @@
 %define major 2
 %define libname %mklibname mhash %{major}
+%define develname %mklibname mhash -d
 
 Summary:	Thread-safe hash library
 Name:		mhash
-Version:	0.9.8
+Version:	0.9.9
 Release:	%mkrel 1
 Group:		System/Libraries
 License:	BSD
@@ -29,14 +30,15 @@ RIPEMD160, TIGER, GOST). These algorithms can be used to compute checksums,
 message digests, and other signatures. The HMAC support implements the basics
 for message authentication,  following RFC 2104.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Header files and libraries for developing apps which will use mhash
 Group:		Development/C
 Requires:	%{libname} = %{version}
-Provides:	libmhash-devel = %{version}
-Provides:	mhash-devel = %{version}
+Provides:	%{name}-devel = %{version}-%{release}
+Provides:	mhash-devel = %{version}-%{release}
+Obsoletes:	%{mklibname mhash 2 -d}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 Mhash is a thread-safe hash library, implemented in C, and provides a uniform
 interface to a large number of hash algorithms (MD5, SHA-1, HAVAL, RIPEMD128,
 RIPEMD160, TIGER, GOST). These algorithms can be used to compute checksums,
@@ -84,7 +86,7 @@ install -m0644 include/mutils/*.h %{buildroot}%{_includedir}/mutils/
 %defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-, root, root)
 %doc AUTHORS COPYING INSTALL ChangeLog NEWS README TODO doc/*.c doc/skid2* 
 %{_includedir}/*.h
@@ -94,5 +96,3 @@ install -m0644 include/mutils/*.h %{buildroot}%{_includedir}/mutils/
 %attr(644,root,root) %{_libdir}/*.la
 %{_libdir}/*.so
 %{_mandir}/man3/*
-
-
