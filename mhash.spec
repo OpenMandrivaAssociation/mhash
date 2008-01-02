@@ -10,6 +10,7 @@ Group:		System/Libraries
 License:	BSD
 URL:		http://mhash.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mhash/%{name}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Mhash is a thread-safe hash library, implemented in C, and provides a uniform
