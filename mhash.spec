@@ -76,9 +76,13 @@ make check
 install -m0644 include/*.h %{buildroot}%{_includedir}/
 install -m0644 include/mutils/*.h %{buildroot}%{_includedir}/mutils/
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
