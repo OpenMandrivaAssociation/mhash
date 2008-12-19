@@ -4,8 +4,8 @@
 
 Summary:	Thread-safe hash library
 Name:		mhash
-Version:	0.9.9
-Release:	%mkrel 6
+Version:	0.9.9.9
+Release:	%mkrel 1
 Group:		System/Libraries
 License:	BSD
 URL:		http://mhash.sourceforge.net/
@@ -68,7 +68,7 @@ use the mhash library.
 make check
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall
 
@@ -85,7 +85,7 @@ install -m0644 include/mutils/*.h %{buildroot}%{_includedir}/mutils/
 %endif
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
