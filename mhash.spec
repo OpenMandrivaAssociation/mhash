@@ -5,7 +5,7 @@
 Summary:	Thread-safe hash library
 Name:		mhash
 Version:	0.9.9.9
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 URL:		http://mhash.sourceforge.net/
