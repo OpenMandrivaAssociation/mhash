@@ -5,7 +5,7 @@
 Summary:	Thread-safe hash library
 Name:		mhash
 Version:	0.9.9.9
-Release:	%mkrel 5
+Release:	%mkrel 6
 Group:		System/Libraries
 License:	LGPLv2+
 Patch2: mhash-0.9.9.9-align.patch
