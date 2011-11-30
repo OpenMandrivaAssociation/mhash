@@ -5,7 +5,7 @@
 Summary:	Thread-safe hash library
 Name:		mhash
 Version:	0.9.9.9
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		System/Libraries
 License:	LGPLv2+
 Patch2: mhash-0.9.9.9-align.patch
@@ -55,7 +55,7 @@ for message authentication,  following RFC 2104.
 %package -n	%{develname}
 Summary:	Header files and libraries for developing apps which will use mhash
 Group:		Development/C
-Requires:	%{libname} = %{version}
+Requires:	%{libname} >= %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	mhash-devel = %{version}-%{release}
@@ -91,7 +91,7 @@ use the mhash library.
 autoreconf -fis
 
 %configure2_5x \
-    --enable-static \
+    --disable-static \
     --enable-shared
 
 # If this exits, the multiarch patch needs an update.
@@ -113,15 +113,10 @@ install -m0644 include/mutils/*.h %{buildroot}%{_includedir}/mutils/
 
 # Eliminate some autoheader definitions which should not enter a public API.
 # There are more which wait for a fix upstream.
-sed -i 's!\(#define \(PACKAGE\|VERSION \).*\)!/* \1 */!g' ${RPM_BUILD_ROOT}%{_includedir}/mutils/mhash_config.h
+sed -i 's!\(#define \(PACKAGE\|VERSION \).*\)!/* \1 */!g' %{buildroot}%{_includedir}/mutils/mhash_config.h
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+# cleanup
+rm -f %{buildroot}%{_libdir}/*.*a
 
 %clean
 rm -rf %{buildroot}
@@ -136,7 +131,5 @@ rm -rf %{buildroot}
 %{_includedir}/*.h
 %dir %{_includedir}/mutils
 %{_includedir}/mutils/*.h
-%{_libdir}/*.a
-%attr(644,root,root) %{_libdir}/*.la
 %{_libdir}/*.so
 %{_mandir}/man3/*
