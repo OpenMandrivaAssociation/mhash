@@ -5,7 +5,7 @@
 Summary:	Thread-safe hash library
 Name:		mhash
 Version:	0.9.9.9
-Release:	%mkrel 7
+Release:	8
 Group:		System/Libraries
 License:	LGPLv2+
 Patch2: mhash-0.9.9.9-align.patch
@@ -32,7 +32,6 @@ Patch9: mhash-0.9.9.9-alignment.patch
 Patch10: mhash-0.9.9.9-keygen_test_fix.patch
 URL:		http://mhash.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mhash/%{name}-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Mhash is a thread-safe hash library, implemented in C, and provides a uniform
@@ -118,15 +117,10 @@ sed -i 's!\(#define \(PACKAGE\|VERSION \).*\)!/* \1 */!g' %{buildroot}%{_include
 # cleanup
 rm -f %{buildroot}%{_libdir}/*.*a
 
-%clean
-rm -rf %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-, root, root)
 %doc AUTHORS COPYING INSTALL ChangeLog NEWS README TODO doc/*.c doc/skid2* 
 %{_includedir}/*.h
 %dir %{_includedir}/mutils
