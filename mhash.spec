@@ -127,3 +127,99 @@ rm -f %{buildroot}%{_libdir}/*.*a
 %{_includedir}/mutils/*.h
 %{_libdir}/*.so
 %{_mandir}/man3/*
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.9.9.9-6mdv2011.0
++ Revision: 666422
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9.9.9-5mdv2011.0
++ Revision: 606640
+- rebuild
+
+* Sun Mar 14 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9.9.9-4mdv2010.1
++ Revision: 519041
+- rebuild
+
+* Sun Oct 04 2009 Oden Eriksson <oeriksson@mandriva.com> 0.9.9.9-3mdv2010.0
++ Revision: 453399
+- sync with mhash-0.9.9.9-3.fc12.src.rpm
+
+  + Christophe Fergeau <cfergeau@mandriva.com>
+    - rebuild
+
+* Fri Dec 19 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9.9.9-1mdv2009.1
++ Revision: 316254
+- 0.9.9.9
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.9.9-6mdv2009.0
++ Revision: 223257
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Tue Jan 15 2008 Thierry Vignaud <tv@mandriva.org> 0.9.9-5mdv2008.1
++ Revision: 153075
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue Sep 18 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.9-4mdv2008.0
++ Revision: 89929
+- rebuild
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9.9-3mdv2008.0
++ Revision: 83414
+- fix deps
+
+* Thu Sep 06 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9.9-2mdv2008.0
++ Revision: 81139
+- bump release due to build system problems
+- 0.9.9
+
+
+* Tue Feb 20 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9.8-1mdv2007.0
++ Revision: 123011
+- 0.9.8
+- drop the ppc patch, it's implemented upstream
+
+* Fri Dec 22 2006 Christiaan Welvaart <cjw@daneel.dyndns.org> 0.9.7-2mdv2007.1
++ Revision: 101493
+- patch0: fix haval on ppc for testsuite
+
+* Tue Oct 31 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9.7-1mdv2007.1
++ Revision: 74194
+- Import mhash
+
+* Mon Jun 26 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9.7-1mdk
+- 0.9.7
+
+* Fri Mar 31 2006 Götz Waschk <waschk@mandriva.org> 0.9.6-1mdk
+- drop patches
+- New release 0.9.6
+
+* Fri Jan 20 2006 Christiaan Welvaart <cjw@daneel.dyndns.org> 0.9.4a-3mdk
+- patch1: fix MIX32 byteswap macro (for big endian systems)
+
+* Sun Jan 15 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9.4a-2mdk
+- install missing headers
+- fix the test suite on x86_64 (P0 by Giuseppe Ghibò)
+- fix deps
+
+* Tue Jan 10 2006 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9.4a-1mdk
+- 0.9.4a
+
+* Sun Jan 16 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9.2-2mdk
+- make it build on 10.0 too
+
+* Thu Jan 13 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9.2-1mdk
+- 0.9.2
+- run the test suite
+
+* Mon Apr 19 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9.1-1mdk
+- 0.9.1
+
