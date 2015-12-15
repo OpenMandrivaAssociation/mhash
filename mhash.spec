@@ -1,6 +1,7 @@
 %define major 2
 %define libname %mklibname mhash %{major}
 %define devname %mklibname mhash -d
+%define _disable_rebuild_configure 1
 
 Summary:	Thread-safe hash library
 Name:		mhash
