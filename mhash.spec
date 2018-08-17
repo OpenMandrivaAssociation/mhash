@@ -77,9 +77,6 @@ grep 'define SIZEOF_' include/mutils/mhash_config.h && exit 1
 
 %make
 
-%check
-make check
-
 %install
 %makeinstall_std
 
