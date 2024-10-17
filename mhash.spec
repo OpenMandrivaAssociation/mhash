@@ -9,7 +9,7 @@ Version:	0.9.9.9
 Release:	21
 Group:		System/Libraries
 License:	LGPLv2+
-Url:		http://mhash.sourceforge.net/
+Url:		https://mhash.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mhash/%{name}-%{version}.tar.gz
 Patch2: mhash-0.9.9.9-align.patch
 Patch3: mhash-0.9.9.9-force64bit-tiger.patch
